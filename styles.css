@@ -1,0 +1,340 @@
+/* =========================================
+   1. DEFINIREA CULORILOR (VARIABILE)
+   ========================================= */
+:root {
+    /* --- LIGHT MODE (Implicit) --- */
+    --bg-body: #f4f6f8;          /* Fundal pagină */
+    --bg-card: #ffffff;          /* Fundal carduri/header */
+    --text-main: #333333;        /* Text normal */
+    --text-secondary: #666666;   /* Subtitluri */
+    --primary-color: #1a237e;    /* Albastru închis (Titluri) */
+    --accent-color: #448aff;     /* Albastru deschis (Roluri) */
+    --border-img: #e8eaf6;       /* Contur imagine */
+    --border-divider: #eaeaea;   /* Linii despărțitoare */
+    --shadow-color: rgba(0, 0, 0, 0.05); /* Umbra fină */
+    --shadow-hover: rgba(0, 0, 0, 0.1);  /* Umbra la hover */
+}
+
+/* --- DARK MODE (Se activează automat) --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-body: #121212;          /* Negru închis */
+        --bg-card: #1e1e1e;          /* Gri închis pentru carduri */
+        --text-main: #e0e0e0;        /* Alb murdar pentru text */
+        --text-secondary: #b0b0b0;   /* Gri deschis */
+        --primary-color: #8c9eff;    /* Un albastru mai luminos pentru contrast pe negru */
+        --accent-color: #448aff;     /* Păstrăm accentul */
+        --border-img: #333333;       /* Contur imagine mai închis */
+        --border-divider: #333333;   /* Linii despărțitoare întunecate */
+        --shadow-color: rgba(0, 0, 0, 0.3); /* Umbră mai puternică pe dark mode */
+        --shadow-hover: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* =========================================
+   2. RESETARE ȘI STILURI GENERALE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body); /* Folosește variabila */
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Tranziție fină între moduri */
+}
+
+/* =========================================
+   3. HEADER (HERO SECTION)
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--bg-card);
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   4. SECȚIUNEA ECHIPEI
+   ========================================= */
+.team-section {
+    width: 95%; 
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 10px 80px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* =========================================
+   5. GRID-UL
+   ========================================= */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================================
+   6. CARDUL MEMBRULUI
+   ========================================= */
+.team-member {
+    background: var(--bg-card); /* Se schimbă automat în gri închis pe Dark Mode */
+    border-radius: 20px;
+    padding: 30px 15px;
+    
+    /* Păstrăm logica de 5 pe rând */
+    width: calc(20% - 20px); 
+    min-width: 220px; 
+    
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: all 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-hover);
+}
+
+/* Imaginea */
+.team-member img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--border-img);
+    transition: border-color 0.3s;
+}
+
+.team-member:hover img {
+    border-color: var(--accent-color);
+}
+
+/* Numele */
+.team-member h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Rolul */
+.team-member h4 {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Link-urile Sociale */
+.social-links {
+    margin-top: auto;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #5c6bc0; /* Păstrăm o culoare neutră pentru link */
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    background-color: rgba(68, 138, 255, 0.1);
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-divider);
+    background-color: var(--bg-card);
+}
+
+/* =========================================
+   SECȚIUNEA DESPRE PROIECT (NOUĂ)
+   ========================================= */
+.about-section {
+    width: 95%;
+    max-width: 1000px; /* O ținem mai îngustă pentru a fi ușor de citit */
+    margin: 0 auto 60px; /* Spațiu jos înainte de footer */
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Stilul containerului de text - similar cu cardurile membrilor */
+.about-card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    text-align: left; /* Textul se citește mai bine aliniat la stânga */
+    color: var(--text-main);
+}
+
+.about-card p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+.about-card strong {
+    color: var(--accent-color); /* Cuvintele cheie vor fi albastre */
+}
+
+.about-card h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+/* Lista de tehnologii */
+.tech-list {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.tech-list li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+/* Marker-ul listei (bulina) să fie albastră */
+.tech-list li::marker {
+    color: var(--accent-color);
+    font-size: 1.2em;
+}
+
+.media-gallery {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #1a1a1a; /* Fundal închis pentru contrast */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.carousel-container {
+    position: relative;
+    /* Limităm lățimea la 800px sau 90% din ecran ca să arate a poză normală */
+    max-width: 800px; 
+    height: 500px; /* Înălțime fixă pentru a nu "sări" pagina când schimbi pozele */
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000; /* Negru în spatele pozelor care nu au formatul perfect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imaginile */
+.carousel-images img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    /* SCHIMBARE MAJORĂ: 'contain' asigură că vezi TOATĂ poza, fără să fie tăiată */
+    object-fit: contain; 
+}
+
+.carousel-images img.active {
+    display: block;
+    animation: fadeEffect 0.5s;
+}
+
+/* Butoanele - Le dăm un z-index mare ca să fim siguri că pot fi apăsate */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    user-select: none;
+    z-index: 100; /* Foarte important pentru a putea da click */
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Punctele de jos */
+.carousel-dots {
+    margin-top: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot, .dot:hover {
+    background-color: #fff; /* Alb pentru punctul activ */
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
