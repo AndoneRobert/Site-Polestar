@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polestar - Project Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Polestar</h1>
+        <p>Un proiect realizat in cadrul celei de a 6-a editii Hackathon ACIEE 2025.</p>
+    </header>
+
+    <section class="team-section">
+        <h2>Cine suntem?</h2>
+        <p class="subtitle">Suntem stundeti in cadrul Facultatii de Automatica, Calculatoare, Inginerie Electrica si Electronica din Galati.</p>
+
+        <div class="team-grid">
+            
+            <div class="team-member">
+                <img src="images/member1.jpg" alt="Photo of Team Member 1">
+                <h3>Andone Robert</h3>
+                <h4>Calculatoare - Anul 3</h4>
+                <p></p>
+                <div class="social-links">
+                    <a href="https://github.com/AndoneRobert" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/member2.jpg" alt="Photo of Team Member 2">
+                <h3>Groza Cosmin</h3>
+                <h4>Calculatoare - Anul 3</h4>
+                <p></p>
+                <div class="social-links">
+                    <a href="https://github.com/CosminG1412" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/member3.jpg" alt="Photo of Team Member 3">
+                <h3>Conduruta Alexandru</h3>
+                <h4>Calculatoare - Anul 3</h4>
+                <p></p>
+                <div class="social-links">
+                    <a href="https://github.com/cashoon20" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/member4.jpg" alt="Photo of Team Member 4">
+                <h3>Pecheanu Stefan</h3>
+                <h4>Automatica - Anul 1</h4>
+                <p></p>
+                <div class="social-links">
+                    <a href="https://github.com/specheanu" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/member5.jpg" alt="Photo of Team Member 5">
+                <h3>Stan George</h3>
+                <h4>Calculatoare - Anul 4</h4>
+                <p></p>
+                <div class="social-links">
+                    <a href="https://github.com/George9109" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>Despre Proiect</h2>
+        <div class="about-card">
+            <p>
+                <t>Am realizat acest proiect in timpul concursului Hackathon ACIEE 2025, in perioada 10-12 decembrie 2025, avand ca tema: <strong>Realizarea unei aplicații care va fi utilizată în prezentările facultății ACIEE la târgurile educaționale organizate de Universitatea „Dunărea de Jos” din Galați (cu impact asupra elevilor care vor participa la târguri).</strong>  Ideea acestui proiect a fost de a realiza o aplicatie interactiva si utila elevilor pentru a afla informatii importante despre facultatea noastra dar in acelasi timp avand si elemente distractive prin jocuri si quiz-uri.
+            </p>
+            <p>Principalele funcționalități ale aplicației includ:</p>
+            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Control Touchless:</strong> Navigare completă prin gesturi ale mâinii, fără a atinge ecranul.</li>
+                <li><strong>AI Quiz Generator:</strong> Întrebări de cultură generală IT generate dinamic folosind Google Gemini.</li>
+                <li><strong>Smart Screensaver:</strong> Activare automată a sistemului atunci când detectează prezența unei persoane.</li>
+                <li><strong>Info Hub Interactiv:</strong> Prezentarea digitală a specializărilor (AIA, CTI, IE, IETTI).</li>
+                <li><strong>Zona Arcade:</strong> Mini-jocuri interactive pentru a atrage vizitatorii la stand.</li>
+            </ul>
+            <h3>Tehnologii folosite:</h3>
+            <ul class="tech-list">
+                <li>Frontend: HTML5, CSS3, JavaScript </li>
+                <li>Backend: Python</li>
+                <li>Hardware: Raspberry Pi</li>
+            </ul>
+        </div>
+    </section>
+
+</ul>
+
+            <div class="media-gallery">
+                <h3>Din culisele Hackathon-ului</h3>
+                
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                    
+                    <div class="carousel-images">
+                        <img src="images/concurs1.jpg" class="active" alt="Poza 1">
+                        <img src="images/concurs2.jpg" alt="Poza 2">
+                        <img src="images/concurs3.jpg" alt="Poza 3">
+                        <img src="images/concurs4.jpg" alt="Poza 4">
+                    </div>
+
+                    <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2025 Polestar Project. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
