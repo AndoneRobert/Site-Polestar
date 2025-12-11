@@ -338,3 +338,22 @@ footer {
     from {opacity: .4} 
     to {opacity: 1}
 }
+
+.btn-github {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: var(--accent-color); /* Albastru deschis */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.btn-github:hover {
+    background-color: var(--primary-color); /* Albastru închis la hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
